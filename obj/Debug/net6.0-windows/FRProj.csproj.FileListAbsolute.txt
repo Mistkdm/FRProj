@@ -1,0 +1,17 @@
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.csproj.AssemblyReference.cache
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.Form1.resources
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.csproj.GenerateResource.cache
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.AssemblyInfoInputs.cache
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.AssemblyInfo.cs
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.csproj.CoreCompileInputs.cache
+C:\Users\User\source\FRProj\bin\Debug\net6.0-windows\FRProj.exe
+C:\Users\User\source\FRProj\bin\Debug\net6.0-windows\FRProj.deps.json
+C:\Users\User\source\FRProj\bin\Debug\net6.0-windows\FRProj.runtimeconfig.json
+C:\Users\User\source\FRProj\bin\Debug\net6.0-windows\FRProj.dll
+C:\Users\User\source\FRProj\bin\Debug\net6.0-windows\FRProj.pdb
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.dll
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\refint\FRProj.dll
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.pdb
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\FRProj.genruntimeconfig.cache
+C:\Users\User\source\FRProj\obj\Debug\net6.0-windows\ref\FRProj.dll
