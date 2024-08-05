@@ -62,6 +62,22 @@ namespace FRProj
                 this.Invalidate();
             }
         }
+
+        private void PointButton_Click(object sender, EventArgs e)
+        {
+            if (IsTextBoxFill(LocationX, LocationY))
+            {
+                point = new Point(Int32.Parse(LocationX.Text), Int32.Parse(LocationY.Text));
+                drawPoint = true;
+            }
+            this.Invalidate();
+        }
+
+        private void WherePoint_Click(object sender, EventArgs e)
+        {
+            if (shapes[0].DotInShape(point) | shapes[1].DotInShape(point) | shapes[2].DotInShape(point)) ;
+            else MessageBox.Show("Точка находится вне фигур");
+        }
         private void OnlyNumbers(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -88,6 +104,13 @@ namespace FRProj
             brushColor = new SolidBrush(fillColor);
             penColor = new Pen(borderColor);
         }
+        private void DrawPoint(Graphics graphics, Point point)
+        {
+            int pointSize = 3;
+            Brush pointBrush = Brushes.Red;
+
+            graphics.FillEllipse(pointBrush, point.X - pointSize / 2, point.Y - pointSize / 2, pointSize, pointSize);
+        }
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             if (shapes.Count > 0)
@@ -103,27 +126,5 @@ namespace FRProj
             }
         }
 
-        private void PointButton_Click(object sender, EventArgs e)
-        {
-            if(IsTextBoxFill(LocationX, LocationY))
-            {
-                point = new Point(Int32.Parse(LocationX.Text), Int32.Parse(LocationY.Text));
-                drawPoint = true;
-            }
-            this.Invalidate();
-        }
-        private void DrawPoint(Graphics graphics, Point point)
-        {
-            int pointSize = 3; 
-            Brush pointBrush = Brushes.Red; 
-
-            graphics.FillEllipse(pointBrush, point.X - pointSize / 2, point.Y - pointSize / 2, pointSize, pointSize);
-        }
-
-        private void WherePoint_Click(object sender, EventArgs e)
-        {
-            if (shapes[0].DotInShape(point) | shapes[1].DotInShape(point) | shapes[2].DotInShape(point)) ;
-            else MessageBox.Show("Точка находится вне фигур");
-        }
     }
 }

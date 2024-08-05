@@ -352,6 +352,7 @@
             // 
             // ComboBorderColor
             // 
+            this.ComboBorderColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBorderColor.FormattingEnabled = true;
             this.ComboBorderColor.Items.AddRange(new object[] {
             "ActiveBorder",
