@@ -13,14 +13,14 @@ namespace FRProj
         public MainForm()
         {
             InitializeComponent();
-            this.Paint += new PaintEventHandler(MainForm_Paint);
+            this.Paint += new PaintEventHandler(MainForm_Paint!);
             shapes = new List<Shapes.Shapes>();
-            LocationX.KeyPress += new KeyPressEventHandler(OnlyNumbers);
-            LocationY.KeyPress += new KeyPressEventHandler(OnlyNumbers);
-            Radius.KeyPress += new KeyPressEventHandler(OnlyNumbers);
-            Width.KeyPress += new KeyPressEventHandler(OnlyNumbers);
-            Height.KeyPress += new KeyPressEventHandler(OnlyNumbers);
-            TriangleSide.KeyPress += new KeyPressEventHandler(OnlyNumbers);
+            LocationX.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
+            LocationY.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
+            Radius.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
+            Width.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
+            Height.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
+            TriangleSide.KeyPress += new KeyPressEventHandler(OnlyNumbers!);
             ComboFillColor.Text = "Black";
             ComboBorderColor.Text = "Black";
             SetColor(ref FillColor!, ref BorderColor!);
