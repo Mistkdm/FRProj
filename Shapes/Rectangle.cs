@@ -24,8 +24,15 @@ namespace FRProj.Shapes
             graphics.FillRectangle(FillColor, Location.X, Location.Y, Width, Height);
             graphics.DrawRectangle(BorderColor, Location.X,Location.Y, Width, Height);
         }
-        public override void DotInShape(Point point)
+        public override bool DotInShape(Point point)
         {
+            bool InShape = false;
+            if (point.X >= Location.X && point.X <= Location.X + Width && point.Y >= Location.Y && point.Y <= Location.Y + Height && Width !=0 && Height !=0)
+            {
+                MessageBox.Show("Точка находится внутри прямоугольника");
+                InShape = true;
+            }
+            return InShape;
         }
         public override void UpdateShape(int x, int y, int height, Brush fillColor, Pen borderColor, int width = 0)
         {

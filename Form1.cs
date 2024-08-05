@@ -3,15 +3,17 @@ using System.Drawing.Text;
 
 namespace FRProj
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private List<Shapes.Shapes> shapes;
         private Brush FillColor;
         private Pen BorderColor;
-        public Form1()
+        private Point point;
+        private bool drawPoint;
+        public MainForm()
         {
             InitializeComponent();
-            this.Paint += new PaintEventHandler(Form1_Paint);
+            this.Paint += new PaintEventHandler(MainForm_Paint);
             shapes = new List<Shapes.Shapes>();
             LocationX.KeyPress += new KeyPressEventHandler(OnlyNumbers);
             LocationY.KeyPress += new KeyPressEventHandler(OnlyNumbers);
@@ -30,7 +32,7 @@ namespace FRProj
             shapes.Add(equTriangle);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CircleButton_Click(object sender, EventArgs e)
         {
             SetColor(ref FillColor, ref BorderColor);
             if (IsTextBoxFill(LocationX, LocationY, Radius)) 
@@ -40,7 +42,7 @@ namespace FRProj
             }
             
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void RectangleButton_Click(object sender, EventArgs e)
         {
             SetColor(ref FillColor, ref BorderColor);
             if (IsTextBoxFill(LocationX, LocationY, Width, Height))
@@ -50,7 +52,7 @@ namespace FRProj
             }
           
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void TriangleButton_Click(object sender, EventArgs e)
         {
             SetColor(ref FillColor, ref BorderColor);
             if (IsTextBoxFill(LocationX, LocationY, TriangleSide))
@@ -86,17 +88,42 @@ namespace FRProj
             brushColor = new SolidBrush(fillColor);
             penColor = new Pen(borderColor);
         }
-        private void Form1_Paint(object sender, PaintEventArgs e)
+        private void MainForm_Paint(object sender, PaintEventArgs e)
         {
             if (shapes.Count > 0)
             {
-                foreach(var shape in shapes)
+                foreach (var shape in shapes)
                 {
                     shape.CreateShape(e.Graphics);
                 }
             }
+            if (drawPoint)
+            {
+                DrawPoint(e.Graphics, point);
+            }
         }
 
+        private void PointButton_Click(object sender, EventArgs e)
+        {
+            if(IsTextBoxFill(LocationX, LocationY))
+            {
+                point = new Point(Int32.Parse(LocationX.Text), Int32.Parse(LocationY.Text));
+                drawPoint = true;
+            }
+            this.Invalidate();
+        }
+        private void DrawPoint(Graphics graphics, Point point)
+        {
+            int pointSize = 3; 
+            Brush pointBrush = Brushes.Red; 
 
+            graphics.FillEllipse(pointBrush, point.X - pointSize / 2, point.Y - pointSize / 2, pointSize, pointSize);
+        }
+
+        private void WherePoint_Click(object sender, EventArgs e)
+        {
+            if (shapes[0].DotInShape(point) | shapes[1].DotInShape(point) | shapes[2].DotInShape(point)) ;
+            else MessageBox.Show("Точка находится вне фигур");
+        }
     }
 }

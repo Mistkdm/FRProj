@@ -31,8 +31,28 @@ namespace FRProj.Shapes
             graphics.FillPolygon(FillColor, Points);
             graphics.DrawPolygon(BorderColor, Points);
         }
-        public override void DotInShape(Point point)
+        public override bool DotInShape(Point point)
         {
+            bool InShape = false;
+            float dX = point.X - Points[2].X;
+            float dY = point.Y - Points[2].Y;
+            float dX21 = Points[2].X - Points[1].X;
+            float dY12 = Points[1].Y - Points[2].Y;
+            float D = dY12 * (Points[0].X - Points[2].X) + dX21 * (Points[0].Y - Points[2].Y);
+            float s = dY12 * dX + dX21 * dY;
+            float t = (Points[2].Y - Points[0].Y) * dX + (Points[0].X - Points[2].X) * dY;
+
+            if ((D < 0) && s <= 0 && t <= 0 && s + t >= D & SideLength !=0)
+            {
+                MessageBox.Show("Точка находится внутри треугольника");
+                InShape = true;
+            }
+            if(s >= 0 && t >= 0 && s + t <= D & SideLength != 0)
+            {
+                MessageBox.Show("Точка находится внутри треугольника");
+                InShape = true;
+            }
+            return InShape;
         }
         public override void UpdateShape(int x, int y, int sideLength, Brush fillColor, Pen borderColor, int unusedSize = 0)
         {

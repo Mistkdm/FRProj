@@ -12,7 +12,7 @@ namespace FRProj.Shapes
         protected Pen? BorderColor { get; set; }
         public abstract void CreateShape(Graphics graphics);
 
-        public abstract void DotInShape(Point point);
+        public abstract bool DotInShape(Point point);
         public abstract void UpdateShape(int x, int y, int size1,  Brush fillColor, Pen borderColor, int size2=0);
 
     }

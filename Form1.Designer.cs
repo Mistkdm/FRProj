@@ -1,6 +1,6 @@
 ﻿namespace FRProj
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CircleButton = new System.Windows.Forms.Button();
+            this.RectangleButton = new System.Windows.Forms.Button();
+            this.TriangleButton = new System.Windows.Forms.Button();
             this.LocationX = new System.Windows.Forms.TextBox();
             this.LocationY = new System.Windows.Forms.TextBox();
             this.X = new System.Windows.Forms.Label();
@@ -44,37 +44,39 @@
             this.LabelTriangleSide = new System.Windows.Forms.Label();
             this.ComboFillColor = new System.Windows.Forms.ComboBox();
             this.ComboBorderColor = new System.Windows.Forms.ComboBox();
+            this.PointButton = new System.Windows.Forms.Button();
+            this.WherePoint = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // CircleButton
             // 
-            this.button1.Location = new System.Drawing.Point(30, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Круг";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.CircleButton.Location = new System.Drawing.Point(30, 12);
+            this.CircleButton.Name = "CircleButton";
+            this.CircleButton.Size = new System.Drawing.Size(101, 23);
+            this.CircleButton.TabIndex = 0;
+            this.CircleButton.Text = "Круг";
+            this.CircleButton.UseVisualStyleBackColor = true;
+            this.CircleButton.Click += new System.EventHandler(this.CircleButton_Click);
             // 
-            // button2
+            // RectangleButton
             // 
-            this.button2.Location = new System.Drawing.Point(137, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Прямоугольник";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.RectangleButton.Location = new System.Drawing.Point(137, 12);
+            this.RectangleButton.Name = "RectangleButton";
+            this.RectangleButton.Size = new System.Drawing.Size(111, 23);
+            this.RectangleButton.TabIndex = 1;
+            this.RectangleButton.Text = "Прямоугольник";
+            this.RectangleButton.UseVisualStyleBackColor = true;
+            this.RectangleButton.Click += new System.EventHandler(this.RectangleButton_Click);
             // 
-            // button3
+            // TriangleButton
             // 
-            this.button3.Location = new System.Drawing.Point(254, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Треугольник";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.TriangleButton.Location = new System.Drawing.Point(254, 12);
+            this.TriangleButton.Name = "TriangleButton";
+            this.TriangleButton.Size = new System.Drawing.Size(101, 23);
+            this.TriangleButton.TabIndex = 2;
+            this.TriangleButton.Text = "Треугольник";
+            this.TriangleButton.UseVisualStyleBackColor = true;
+            this.TriangleButton.Click += new System.EventHandler(this.TriangleButton_Click);
             // 
             // LocationX
             // 
@@ -165,6 +167,7 @@
             // 
             // ComboFillColor
             // 
+            this.ComboFillColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboFillColor.FormattingEnabled = true;
             this.ComboFillColor.Items.AddRange(new object[] {
             "ActiveBorder",
@@ -531,11 +534,33 @@
             this.ComboBorderColor.Size = new System.Drawing.Size(100, 23);
             this.ComboBorderColor.TabIndex = 17;
             // 
-            // Form1
+            // PointButton
+            // 
+            this.PointButton.Location = new System.Drawing.Point(669, 12);
+            this.PointButton.Name = "PointButton";
+            this.PointButton.Size = new System.Drawing.Size(119, 25);
+            this.PointButton.TabIndex = 18;
+            this.PointButton.Text = "Создать точку";
+            this.PointButton.UseVisualStyleBackColor = true;
+            this.PointButton.Click += new System.EventHandler(this.PointButton_Click);
+            // 
+            // WherePoint
+            // 
+            this.WherePoint.Location = new System.Drawing.Point(669, 43);
+            this.WherePoint.Name = "WherePoint";
+            this.WherePoint.Size = new System.Drawing.Size(119, 25);
+            this.WherePoint.TabIndex = 19;
+            this.WherePoint.Text = "Где точка?";
+            this.WherePoint.UseVisualStyleBackColor = true;
+            this.WherePoint.Click += new System.EventHandler(this.WherePoint_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.WherePoint);
+            this.Controls.Add(this.PointButton);
             this.Controls.Add(this.ComboBorderColor);
             this.Controls.Add(this.ComboFillColor);
             this.Controls.Add(this.LabelTriangleSide);
@@ -549,10 +574,10 @@
             this.Controls.Add(this.X);
             this.Controls.Add(this.LocationY);
             this.Controls.Add(this.LocationX);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Controls.Add(this.TriangleButton);
+            this.Controls.Add(this.RectangleButton);
+            this.Controls.Add(this.CircleButton);
+            this.Name = "MainForm";
             this.Text = "Shapes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -561,9 +586,9 @@
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button CircleButton;
+        private Button RectangleButton;
+        private Button TriangleButton;
         private TextBox LocationX;
         private TextBox LocationY;
         private Label X;
@@ -577,5 +602,7 @@
         private Label LabelWidthAndHeight;
         private ComboBox ComboFillColor;
         private ComboBox ComboBorderColor;
+        private Button PointButton;
+        private Button WherePoint;
     }
 }
